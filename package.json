@@ -1,6 +1,6 @@
 {
   "name": "pingdash",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A ping status dashboard",
   "main": "index.js",
   "scripts": {},
@@ -20,5 +20,8 @@
     "normalize-url": "^1.8.0",
     "request": "^2.79.0",
     "shelljs": "^0.7.5"
+  },
+  "bin": {
+    "pingdash": "index.js"
   }
 }
