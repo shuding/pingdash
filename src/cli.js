@@ -41,4 +41,6 @@ const startup = (filename = 'default.json') => {
   process.on('SIGINT', process.exit)
 }
 
-startup()
+let filename = process.argv[process.argv.length - 1]
+
+startup(filename.match(/.json$/) ? filename : undefined)
