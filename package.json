@@ -1,0 +1,23 @@
+{
+  "name": "pingdash",
+  "version": "0.0.1",
+  "description": "A ping status dashboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quietshu/pingboard.git"
+  },
+  "author": "Shu Ding",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/quietshu/pingboard/issues"
+  },
+  "homepage": "https://github.com/quietshu/pingboard#readme",
+  "dependencies": {
+    "node-schedule": "^1.2.0",
+    "shelljs": "^0.7.5"
+  }
+}
