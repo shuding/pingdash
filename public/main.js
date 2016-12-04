@@ -33,22 +33,25 @@
         row.appendChild(document.createElement('SPAN'))
         row.appendChild(document.createElement('SPAN'))
         row.appendChild(document.createElement('SPAN'))
+        row.appendChild(document.createElement('SPAN'))
         container.appendChild(row)
         return row
       })
     }
 
     data.data.map(function (site, i) {
+      let status = site.result ? site.result.status : -1
       dataRow[i].className =
-        (site.result && site.result.status && site.result.status < 400) ? 'row-ok' : 'row-error'
+        (status === 0 || (status > 100 && status < 400)) ? 'row-ok' : 'row-error'
 
       dataRow[i].childNodes[0].innerHTML =
-        site.method + ' / ' + (site.result ? site.result.status : '?') + ' / ' + (site.result ? site.result.time + 's' : '?')
+        site.method + ' / ' + (status >= 0 ? status : '?') + ' / ' + (site.result ? site.result.time + 'S' : '?')
       dataRow[i].childNodes[1].innerHTML = site.name
       dataRow[i].childNodes[2].innerHTML = site.url
-      dataRow[i].childNodes[3].innerHTML = site.result ? site.result.message : ''
-      dataRow[i].childNodes[3].setAttribute('title', site.result ? site.result.message : '')
-      dataRow[i].childNodes[4].innerHTML = site.interval + 's'
+      dataRow[i].childNodes[3].innerText = site.result.body || ''
+      dataRow[i].childNodes[4].innerHTML = site.result ? site.result.message : ''
+      dataRow[i].childNodes[4].setAttribute('title', site.result ? site.result.message : '')
+      dataRow[i].childNodes[5].innerHTML = site.interval + 'S'
     })
   }
 

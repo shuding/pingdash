@@ -1,13 +1,24 @@
 {
-  "title": "Hello!",
-  "silent": true,
+  "title": "Hello Pingdash",
+  "silent": false,
   "port": 3000,
   "host": "0.0.0.0",
   "data": [
-	{
-	  "name": "zenkr",
-	  "url": "v2.zenkr.io",
+  	{
+  	  "name": "Google",
+  	  "url": "https://google.com",
       "interval": 3
-	}
+  	},
+    {
+      "name": "Google",
+      "method": "post",
+      "url": "https://google.com",
+      "interval": 3
+    },
+    {
+      "name": "baidu",
+      "interval": 3,
+      "method": "ping baidu.com -c 1"
+    }
   ]
 }
