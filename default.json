@@ -1,24 +1,13 @@
 {
-  "title": "Hello Pingdash!",
-  "silent": false,
+  "title": "Hello!",
+  "silent": true,
   "port": 3000,
   "host": "0.0.0.0",
   "data": [
-    {
-      "name": "Google",
-      "url": "www.google.com",
-      "interval": 10
-    },
-    {
-      "name": "POST Google",
-      "method": "POST",
-      "url": "www.google.com",
-      "interval": 10
-    },
-    {
-      "name": "Example",
-      "url": "example.com",
-      "interval": 5
-    }
+	{
+	  "name": "zenkr",
+	  "url": "v2.zenkr.io",
+      "interval": 3
+	}
   ]
 }

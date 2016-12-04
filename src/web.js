@@ -26,7 +26,7 @@ const init = options => {
   }, options)
 
   let override = {
-    root: path.resolve('public'),
+    root: path.join(__dirname, '..', 'public'),
     open: false,
     wait: 0,
     logLevel: 0,
