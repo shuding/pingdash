@@ -73,7 +73,6 @@ function ping(options, update, log, error) {
       interval: site.interval ? Math.max(1, Number(site.interval)) : 3,
       result: null
     }
-    log()
     log(`Starting monitoring ${option.name}...`)
     check(i, option, update, log, error)
 
