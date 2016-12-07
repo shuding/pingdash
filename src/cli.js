@@ -2,6 +2,7 @@ const path = require('path')
 const fs = require('fs')
 
 const chalk = require('chalk')
+const program = require('commander')
 
 const { init, update } = require('./web')
 const ping = require('./ping')
@@ -22,13 +23,21 @@ const getConfig = (filename) =>
 
 const exit = () => log('Exiting...')
 
-const startup = (filename = 'default.json') => {
+const startup = (filename = 'default.json', {silent, port}) => {
   log('Running pingdash...')
 
   getConfig(filename).then(conf => {
     log(`Configuration ${filename} loaded.`)
     // overwrite default options
     Object.assign(options, conf)
+
+    // overwrite cli options
+    if (typeof silent !== 'undefined') {
+      options.silent = silent
+    }
+    if (typeof port !== 'undefined') {
+      options.port = port
+    }
 
     init(options)
     ping(options, update, log, error)
@@ -43,4 +52,12 @@ const startup = (filename = 'default.json') => {
 
 let filename = process.argv[process.argv.length - 1]
 
-startup(filename.match(/.json$/) ? filename : undefined)
+program
+  .version('0.0.7')
+  .usage('[options] <config file>')
+  .action((filename, config) => {
+    startup(filename.match(/.json$/) ? filename : undefined, config)
+  })
+  .option('-p, --port <port>', 'server\'s listen port, 3000 default')
+  .option('-s, --silent', 'don\'t output any logs')
+  .parse(process.argv)

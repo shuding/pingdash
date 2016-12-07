@@ -1,6 +1,6 @@
 {
   "name": "pingdash",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "description": "A ping status dashboard",
   "main": "index.js",
   "scripts": {},
@@ -10,16 +10,21 @@
   },
   "author": "Shu Ding",
   "license": "MIT",
+  "preferGlobal": true,
   "bugs": {
     "url": "https://github.com/quietshu/pingboard/issues"
   },
   "homepage": "https://github.com/quietshu/pingboard#readme",
   "dependencies": {
     "chalk": "^1.1.3",
+    "commander": "^2.9.0",
     "live-server": "^1.1.0",
     "normalize-url": "^1.8.0",
     "request": "^2.79.0",
     "shelljs": "^0.7.5"
+  },
+  "engines": {
+    "node": ">= 6.0.0"
   },
   "bin": {
     "pingdash": "index.js"

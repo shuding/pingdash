@@ -1,24 +1,24 @@
 {
-  "title": "Hello Pingdash!",
+  "title": "Hello Pingdash",
   "silent": false,
   "port": 3000,
   "host": "0.0.0.0",
   "data": [
+  	{
+  	  "name": "Google",
+  	  "url": "https://google.com",
+      "interval": 3
+  	},
     {
       "name": "Google",
-      "url": "www.google.com",
-      "interval": 10
+      "method": "post",
+      "url": "https://google.com",
+      "interval": 3
     },
     {
-      "name": "POST Google",
-      "method": "POST",
-      "url": "www.google.com",
-      "interval": 10
-    },
-    {
-      "name": "Example",
-      "url": "example.com",
-      "interval": 5
+      "name": "baidu",
+      "interval": 3,
+      "method": "ping baidu.com -c 1"
     }
   ]
 }

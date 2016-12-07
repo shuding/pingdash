@@ -7,10 +7,17 @@ body {
   font-size: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC', 'PingFang TC', 'PingFang HK', 'Microsoft YaHei', sans-serif;
   box-sizing: border-box;
+  font-weight: 200;
+}
+
+*::selection {
+  color: white;
+  background: #FB2B69;
 }
 
 h1 {
-  margin-bottom: 1.5em;
+  font-weight: 400;
+  margin-bottom: 1em;
 }
 
 a {
@@ -38,9 +45,8 @@ footer {
 
 #container > div > span:first-of-type {
   position: relative;
-  padding: .125em .35em .125em 1.5em;
+  padding: .125em .4em .125em 1.5em;
   white-space: nowrap;
-  width: 220px;
   height: 1.5em;
   margin-right: 10px;
   border-radius: 15px;
@@ -82,30 +88,74 @@ footer {
 
 #container > div > span:nth-of-type(2) {
   white-space: nowrap;
+  font-weight: 300;
 }
 
 /* url */
 #container > div > span:nth-of-type(3) {
   font-size: .7em;
   color: #949494;
-  align-self: flex-start;
-  margin: 0 15px 0 5px;
+  margin: 0 1em;
+  text-decoration: underline;
 }
 
 /* message */
 #container > div > span:nth-of-type(4) {
-  flex: 1;
+  flex: 1 1;
+  padding: 5px;
   text-align: right;
+  margin-top: 2px;
   margin-right: 20px;
-  font-size: .7em;
   color: #999;
-  font-style: italic;
+  font-size: .6em;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  background: white;
+  align-self: baseline;
+  text-align: left;
+  box-shadow: 0 0 0 1px white;
+}
+
+#container > div > span:nth-of-type(4):hover {
+  flex: 1;
+  white-space: pre-line;
+  box-shadow: 0 0 0 1px #ccc;
+  z-index: 1;
+}
+
+#container > div > span:nth-of-type(4):hover + span {
+  max-width: 0;
+  padding: 0;
+}
+
+#container > div > span:nth-of-type(4) br {
+  display: none;
+}
+
+/* body */
+#container > div > span:nth-of-type(5) {
+  // flex: 0;
+  max-width: 100%;
+  padding: 5px;
+  font-size: .7em;
+  margin-right: .5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: white;
+  align-self: baseline;
+  box-shadow: 0 0 0 1px white;
+}
+
+#container > div > span:nth-of-type(5):hover {
+  white-space: pre-line;
+  box-shadow: 0 0 0 1px #ccc;
+  z-index: 1;
 }
 
 /* interval */
-#container > div > span:nth-of-type(5) {
+#container > div > span:nth-of-type(6) {
   font-size: .8em;
+  align-self: baseline;
 }
