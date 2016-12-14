@@ -1,5 +1,7 @@
 # Pingdash
-A simple status dashboard for all your services. 
+A simple status dashboard for all your services.
+
+![](demo.gif)
 
 ## Usage
 ```bash
