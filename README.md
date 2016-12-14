@@ -6,17 +6,18 @@ A simple status dashboard for all your services.
 pingdash config.json
 ```
 
+Then open http://localhost:3000 in your browser. The config file is defined as below:
+
+## Configuration
+
 ### config.json
 ```json
 {
   "title": "Hello Pingdash",
-  "silent": false,
   "port": 3000,
-  "host": "0.0.0.0",
   "data": [
   	{
   	  "name": "Google",
-      "method": "GET",
   	  "url": "https://google.com",
       "interval": 3
   	}
@@ -26,11 +27,13 @@ pingdash config.json
 
 ## Install
 You could just use npm to install it globally:
+
 ```bash
 npm i pingdash -g
 ```
 
 Or use yarn:
+
 ```bash
 yarn global add pingdash
 ```
