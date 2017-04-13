@@ -2,6 +2,7 @@ const path = require('path')
 const fs = require('fs')
 
 const chalk = require('chalk')
+const CLI = require('clui')
 const program = require('commander')
 
 const { init, update } = require('./web')
@@ -24,7 +25,9 @@ const getConfig = (filename) =>
 const exit = () => log('Exiting...')
 
 const startup = (filename = 'default.json', {silent, port}) => {
-  log('Running pingdash...')
+  const indicator = new CLI.Spinner('Running pingdash...')
+  indicator.start()
+  // log('Running pingdash...')
 
   getConfig(filename).then(conf => {
     log(`Configuration ${filename} loaded.`)
