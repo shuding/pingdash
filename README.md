@@ -10,19 +10,25 @@ pingdash config.json
 
 Then open http://localhost:3000 in your browser. The config file is defined as below:
 
-## Configuration
-
-### config.json
+## config.json sample
 ```json
 {
   "title": "Hello Pingdash",
   "port": 3000,
   "data": [
-  	{
-  	  "name": "Google",
-  	  "url": "https://google.com",
+    // send a GET request to Google every 3 seconds
+    {
+      "name": "Google",
+      "url": "https://google.com",
       "interval": 3
-  	}
+    },
+    // ping GitHub once every minute
+    {
+      "name": "GitHub",
+      "method": "ping github.com -c 1",
+      "interval": 60
+    },
+    // ...
   ]
 }
 ```
