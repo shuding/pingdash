@@ -11,7 +11,7 @@ pingdash config.json
 Then open http://localhost:3000 in your browser. The config file is defined as below:
 
 ## config.json sample
-```json
+```javascript
 {
   "title": "Hello Pingdash",
   "port": 3000,
