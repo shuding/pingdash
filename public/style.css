@@ -52,15 +52,10 @@ footer {
   border-radius: 15px;
   box-sizing: border-box;
   cursor: default;
-
-  max-width: 0%;
-  padding-right: 0;
-  overflow: hidden;
 }
 #container > div > span:first-of-type:hover {
   filter: brightness(1.05);
-  max-width: 100%;
-  padding-right: .4em;
+  box-shadow: 0 0 0 1px inset;
 }
 #container > div > span:first-of-type:before {
   content: '';

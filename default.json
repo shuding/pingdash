@@ -4,21 +4,26 @@
   "port": 3000,
   "host": "0.0.0.0",
   "data": [
-  	{
-  	  "name": "Google",
-  	  "url": "https://google.com",
-      "interval": 3
-  	},
     {
-      "name": "Google",
+      "name": "GET Google",
+      "url": "https://google.com",
+      "interval": 3
+    },
+    {
+      "name": "POST Google",
       "method": "post",
       "url": "https://google.com",
       "interval": 3
     },
     {
-      "name": "baidu",
-      "interval": 3,
-      "method": "ping baidu.com -c 1"
+      "name": "Ping GitHub",
+      "interval": 600,
+      "method": "ping github.com -c 1"
+    },
+    {
+      "name": "Ping Redis",
+      "interval": 600,
+      "method": "redis-cli PING"
     }
   ]
 }

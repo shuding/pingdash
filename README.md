@@ -4,11 +4,9 @@ A simple status dashboard for all your services.
 ![](demo.gif)
 
 ## Usage
-```bash
-pingdash config.json
-```
+Create a config and run `pingdash config.json`, a beautiful realtime monitoring page will be instantly setup on http://localhost:3000.
 
-Then open http://localhost:3000 in your browser. The config file is defined as below:
+The config file is defined as below:
 
 ## config.json sample
 ```javascript
@@ -33,8 +31,10 @@ Then open http://localhost:3000 in your browser. The config file is defined as b
 }
 ```
 
+For more examples, you can checkout the default.json file in this repo.
+
 ## Install
-You could just use npm to install it globally:
+You could use npm or yarn to install it globally:
 
 ```bash
 npm i pingdash -g
@@ -44,6 +44,21 @@ Or use yarn:
 
 ```bash
 yarn global add pingdash
+```
+
+## Options
+```bash
+$ pingdash --help
+
+  Usage: pingdash [options] <config file>
+
+  Options:
+
+    -h, --help         output usage information
+    -V, --version      output the version number
+    -p, --port <port>  server's listen port, 3000 default
+    -s, --silent       don't output any logs
+
 ```
 
 ## License
