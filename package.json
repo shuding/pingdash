@@ -1,6 +1,6 @@
 {
   "name": "pingdash",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A ping status dashboard",
   "main": "index.js",
   "scripts": {},
@@ -22,7 +22,8 @@
     "live-server": "^1.1.0",
     "normalize-url": "^1.8.0",
     "request": "^2.79.0",
-    "shelljs": "^0.7.5"
+    "shelljs": "^0.7.5",
+    "ssl-root-cas": "^1.2.3"
   },
   "engines": {
     "node": ">= 6.0.0"

@@ -25,10 +25,6 @@ const getConfig = (filename) =>
 const exit = () => log('Exiting...')
 
 const startup = (filename = 'default.json', {silent, port}) => {
-  const indicator = new CLI.Spinner('Running pingdash...')
-  indicator.start()
-  // log('Running pingdash...')
-
   getConfig(filename).then(conf => {
     log(`Configuration ${filename} loaded.`)
     // overwrite default options
@@ -40,6 +36,12 @@ const startup = (filename = 'default.json', {silent, port}) => {
     }
     if (typeof port !== 'undefined') {
       options.port = port
+    }
+
+    if（!options.silent) {
+      const indicator = new CLI.Spinner('Running pingdash...')
+      indicator.start()
+      // log('Running pingdash...')
     }
 
     init(options)
