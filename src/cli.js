@@ -56,7 +56,7 @@ const startup = (filename = 'default.json', {silent, port}) => {
 let filename = process.argv[process.argv.length - 1]
 
 program
-  .version('0.1.2')
+  .version('0.1.3')
   .usage('[options] <config file>')
   .action((filename, config) => {
     startup(filename.match(/.json$/) ? filename : undefined, config)
