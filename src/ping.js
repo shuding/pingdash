@@ -4,21 +4,21 @@ const exec = require('shelljs').exec
 
 let data = {}
 
-function check(index, option, update, log, error) {
+function check(index, option, update, log, error, info) {
   function doit() {
     let startTime = (new Date).getTime()
     let method = option.method
     if (/(POST|GET|PUT|DELETE|HEAD|OPTIONS)/.test(method.toUpperCase())) {
       if (!option.url) {
-        log(`${option.name}: no URL set`)
-        log(`Skipping...`)
+        info(`${option.name}: no URL set`)
+        info(`Skipping...`)
         return
       }
       request({method, url} = option, (err, response, body) => {
         if (err) {
           error(`${option.name} error:`)
           error('>', err.message)
-          log(`Skipping...`)
+          info(`Skipping...`)
 
           const time = ((new Date).getTime() - startTime) / 1000
           data.data[index].result = {
@@ -63,7 +63,7 @@ function check(index, option, update, log, error) {
   doit()
 }
 
-function ping(options, update, log, error) {
+function ping(options, update, log, error, info) {
   // setup default data & check
   let siteOptions = options.data.map((site, i) => {
     let option = {
@@ -73,8 +73,8 @@ function ping(options, update, log, error) {
       interval: site.interval ? Math.max(1, Number(site.interval)) : 3,
       result: null
     }
-    log(`Starting monitoring ${option.name}...`)
-    check(i, option, update, log, error)
+    info(`Start monitoring ${option.name}...`)
+    check(i, option, update, log, error, info)
 
     return option
   })
@@ -84,7 +84,7 @@ function ping(options, update, log, error) {
   })
 
   // initial update
-  log()
+  info()
   update(data)
 }
 

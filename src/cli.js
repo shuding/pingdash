@@ -2,7 +2,6 @@ const path = require('path')
 const fs = require('fs')
 
 const chalk = require('chalk')
-const CLI = require('clui')
 const program = require('commander')
 
 const { init, update } = require('./web')
@@ -15,18 +14,19 @@ let options = {
 }
 
 // Logging
-const log = (...args) => !options.silent && console.log(chalk.green.bold(' ›'), ...args)
+const info = (...args) => !options.silent && console.log(' ›', ...args)
+const log = (...args) => !options.silent && console.log(chalk.green.bold(' ›'), ...args.map(arg => chalk.green(arg.toString())))
 const error = (...args) => !options.silent && console.error(chalk.red.bold(' ›', ...args))
 
 const getConfig = (filename) =>
   new Promise(resolve => fs.readFile(path.resolve(filename), (err, res) => resolve(res)))
     .then(content => JSON.parse(content.toString()))
 
-const exit = () => log('Exiting...')
+const exit = () => info('Exiting...')
 
 const startup = (filename = 'default.json', {silent, port}) => {
   getConfig(filename).then(conf => {
-    log(`Configuration ${filename} loaded.`)
+    info(`Config file ${filename} loaded.`)
     // overwrite default options
     Object.assign(options, conf)
 
@@ -38,14 +38,12 @@ const startup = (filename = 'default.json', {silent, port}) => {
       options.port = port
     }
 
-    if（!options.silent) {
-      const indicator = new CLI.Spinner('Running pingdash...')
-      indicator.start()
-      // log('Running pingdash...')
+    if (!options.silent) {
+      info('Running pingdash...')
     }
 
     init(options)
-    ping(options, update, log, error)
+    ping(options, update, log, error, info)
 
   }).catch(err => {
     error(err.message)
@@ -58,7 +56,7 @@ const startup = (filename = 'default.json', {silent, port}) => {
 let filename = process.argv[process.argv.length - 1]
 
 program
-  .version('0.0.7')
+  .version('0.1.2')
   .usage('[options] <config file>')
   .action((filename, config) => {
     startup(filename.match(/.json$/) ? filename : undefined, config)

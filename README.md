@@ -1,7 +1,9 @@
-# Pingdash
+# Pingdash ![](https://img.shields.io/npm/v/pingdash.svg)
 A simple status dashboard for all your services.
 
-![](demo.gif)
+![](screenshot-terminal.png)
+
+![](screenshot-browser.png)
 
 ## Usage
 Create a config and run `pingdash config.json`, a beautiful realtime monitoring page will be instantly setup on http://localhost:3000.
@@ -34,7 +36,7 @@ The config file is defined as below:
 For more examples, you can checkout the default.json file in this repo.
 
 ## Install
-You could use npm or yarn to install it globally:
+You could use npm or yarn to install it globally (recommand node.js version >= 6.0):
 
 ```bash
 npm i pingdash -g

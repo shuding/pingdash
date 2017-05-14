@@ -55,7 +55,7 @@
     })
   }
 
-  fetchData(1000, function (data) {
+  fetchData(3000, function (data) {
     console.log(data)
     renderData(data)
   })
