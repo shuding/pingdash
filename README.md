@@ -1,9 +1,9 @@
 # Pingdash ![](https://img.shields.io/npm/v/pingdash.svg)
 A simple status dashboard for all your services.
 
-![](screenshot-terminal.png)
+![](https://raw.githubusercontent.com/quietshu/pingdash/master/screenshot-terminal.png)
 
-![](screenshot-browser.png)
+![](https://raw.githubusercontent.com/quietshu/pingdash/master/screenshot-browser.png)
 
 ## Usage
 Create a config and run `pingdash config.json`, a beautiful realtime monitoring page will be instantly setup on http://localhost:3000.
