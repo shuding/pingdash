@@ -50,7 +50,7 @@
     },
     {
       "component": "header",
-      "heading": "pingdash",
+      "heading": "Pingdash",
       "subhead": "A simple dashboard.",
       "children": [
         {
@@ -81,8 +81,8 @@
           "text": "GitHub"
         },
         {
-          "href": "https://github.com/quietshu",
-          "text": "quietshu"
+          "href": "https://twitter.com/quietshu",
+          "text": "@quietshu"
         }
       ]
     }
