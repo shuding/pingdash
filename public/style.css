@@ -52,6 +52,9 @@ footer {
   border-radius: 15px;
   box-sizing: border-box;
   cursor: default;
+  max-width: 230px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #container > div > span:first-of-type:hover {
   filter: brightness(1.05);
