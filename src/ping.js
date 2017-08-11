@@ -8,7 +8,7 @@ function check(index, option, update, log, error, info) {
   function doit() {
     let startTime = (new Date).getTime()
     let method = option.method
-    if (/(POST|GET|PUT|DELETE|HEAD|OPTIONS)/.test(method.toUpperCase())) {
+    if (/^(POST|GET|PUT|DELETE|HEAD|OPTIONS)$/.test(method.toUpperCase())) {
       if (!option.url) {
         info(`${option.name}: no URL set`)
         info(`Skipping...`)
