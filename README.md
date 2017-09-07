@@ -1,5 +1,5 @@
 # Pingdash ![](https://img.shields.io/npm/v/pingdash.svg)
-A simple status dashboard for all your services.
+A simple Web status dashboard for all your services with periodic monitoring commands.
 
 Demo: [t.shud.in](//t.shud.in) or [azure.shud.in](http://azure.shud.in).
 
@@ -21,21 +21,26 @@ The config file is defined as below:
     // send a GET request to Google every 3 seconds
     {
       "name": "Google",
-      "url": "https://google.com",
+      "url": "https://google.com",       // using GET by default
       "interval": 3
     },
     // ping GitHub once every minute
     {
       "name": "GitHub",
-      "method": "ping github.com -c 1",
+      "method": "ping github.com -c 1",  // CLI commands
       "interval": 60
+    },
+    // POST request
+    {
+      "name": "POST Google",
+      "method": "post",                  // POST
+      "url": "https://google.com",
+      "interval": 3
     },
     // ...
   ]
 }
 ```
-
-For more examples, you can checkout the default.json file in this repo.
 
 ## Install
 You could use npm or yarn to install it globally (recommand node.js version >= 6.0):
