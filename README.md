@@ -1,6 +1,8 @@
 # Pingdash ![](https://img.shields.io/npm/v/pingdash.svg)
 A simple status dashboard for all your services.
 
+Demo: [t.shud.in](//t.shud.in) or [azure.shud.in](http://azure.shud.in).
+
 ![](https://raw.githubusercontent.com/quietshu/pingdash/master/screenshot-terminal.png)
 
 ![](https://raw.githubusercontent.com/quietshu/pingdash/master/screenshot-browser.png)
